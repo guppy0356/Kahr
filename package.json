@@ -2,13 +2,19 @@
   "name": "kahr",
   "private": true,
   "workspaces": [
-    "backend"
+    "backend",
+    "frontend"
   ],
   "scripts": {
     "dev": "npm run dev -w backend",
+    "dev:frontend": "npm run dev -w frontend",
+    "dev:all": "concurrently \"npm run dev\" \"npm run dev:frontend\"",
     "build": "npm run build -w backend",
     "preview": "npm run preview -w backend",
     "deploy": "npm run deploy -w backend",
     "cf-typegen": "npm run cf-typegen -w backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
