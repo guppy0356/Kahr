@@ -1,20 +1,14 @@
 {
-  "name": "Kahr",
-  "type": "module",
+  "name": "kahr",
+  "private": true,
+  "workspaces": [
+    "backend"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "$npm_execpath run build && vite preview",
-    "deploy": "$npm_execpath run build && wrangler deploy",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
-  },
-  "dependencies": {
-    "hono": "^4.11.7"
-  },
-  "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.2.3",
-    "vite": "^6.3.5",
-    "vite-ssr-components": "^0.5.2",
-    "wrangler": "^4.17.0"
+    "dev": "npm run dev -w backend",
+    "build": "npm run build -w backend",
+    "preview": "npm run preview -w backend",
+    "deploy": "npm run deploy -w backend",
+    "cf-typegen": "npm run cf-typegen -w backend"
   }
 }
